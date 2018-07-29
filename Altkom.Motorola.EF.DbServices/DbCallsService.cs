@@ -1,4 +1,5 @@
-﻿using Altkom.Motorola.EF.Models;
+﻿using Altkom.Motorola.EF.DbServices.Extensions;
+using Altkom.Motorola.EF.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,39 @@ namespace Altkom.Motorola.EF.DbServices
             }
         }
 
-        public bool Any() => context.Calls.Any();
+        public void AddBatch<T>(IEnumerable<T> entities, int batchSize = 10)
+              where T : class
+        {
+            
+            using (var transaction = context.Database.BeginTransaction())
+            {
+                context.Configuration.AutoDetectChangesEnabled = false;
+
+                int count = 1;
+
+                try
+                {
+
+                    foreach (var entity in entities)
+                    {
+                        context.BulkInsert<T>(entity, count, batchSize);
+                        count++;
+                    }
+
+                    transaction.Commit();
+                }
+
+                catch (Exception e)
+                {
+                    transaction.Rollback();
+
+                    throw;
+                }
+            }
+            
+
+        }
+
+            public bool Any() => context.Calls.Any();
     }
 }

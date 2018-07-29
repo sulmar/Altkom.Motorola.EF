@@ -51,6 +51,7 @@
     <Compile Include="Configurations\ContactConfiguration.cs" />
     <Compile Include="Configurations\DeviceConfiguration.cs" />
     <Compile Include="DbCallsService.cs" />
+    <Compile Include="Extensions\DbContextExtensions.cs" />
     <Compile Include="RadioContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

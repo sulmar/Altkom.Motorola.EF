@@ -12,6 +12,11 @@ namespace Altkom.Motorola.EF.DbServices.Configurations
                 .IsUnicode(false)
                 .HasMaxLength(50);
 
+            Property(p => p.Model)
+               .IsRequired()
+               .IsUnicode(false)
+               .HasMaxLength(20);
+
 
             Property(p => p.Firmware)
                 .IsUnicode(false)

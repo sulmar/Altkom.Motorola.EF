@@ -38,10 +38,16 @@ namespace Altkom.Motorola.EF.Generator
                             .FinishWith((f, call) => Debug.WriteLine($"Call was created. Id = {call.Id} {call.Source.Name} -> {call.Target.Name}"));
         }
 
+        public static string[] Models = new string[]
+        {
+            "SL4000e", "DP4000e", "DP3000e", "DP4000EX", "SL2600", "DP2000e", "SL1600", "DP1400"
+        };
+
         public static Faker<Device> Devices => new Faker<Device>()
                            .StrictMode(true)
                            .RuleFor(p => p.Id, f => f.IndexFaker)
                            .RuleFor(p => p.Name, f => $"Radio {f.UniqueIndex}")
+                           .RuleFor(p => p.Model, f => f.PickRandom(Models))
                            .RuleFor(p => p.Firmware, f => f.System.Version().ToString())
                            .RuleFor(p => p.Description, f => f.Lorem.Paragraph(1))
                            .Ignore(p => p.Calls)

@@ -19,6 +19,7 @@ namespace Altkom.Motorola.EF.ConsoleClient
 
             Generate();
 
+            // TODO: Create tests
 
 
 
@@ -52,10 +53,12 @@ namespace Altkom.Motorola.EF.ConsoleClient
 
                 if (!callsService.Any())
                 {
-                    var calls = SampleData.Generate(1000, 1000, 100000);
+                    var calls = SampleData.Generate(1000, 1000, 1000000);
 
                     Debug.WriteLine("Saving to database...");
-                    callsService.AddRange(calls);
+                    // callsService.AddRange(calls);
+                    callsService.AddBatch(calls);
+
                     Debug.WriteLine("Success.");
                 }
             }
