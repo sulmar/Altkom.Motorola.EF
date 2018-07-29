@@ -15,10 +15,10 @@ namespace Altkom.Motorola.EF.DbServices.Configurations
                 .HasMaxLength(50);
 
             Property(p => p.Country)
-                .HasMaxLength(50);
+                .HasMaxLength(100);
 
             Property(p => p.CompanyName)
-                .HasMaxLength(50);
+                .HasMaxLength(100);
 
         }
     }

@@ -7,21 +7,26 @@ using System.Linq;
 namespace Altkom.Motorola.EF.Generator
 {
 
-    // Install-Package Bogus
+    // PM> Install-Package Bogus
 
     public class Fake
     {
         public static Faker<Contact> Contacts => new Faker<Contact>()
+                            .StrictMode(true)
+                            .RuleFor(p => p.Id, f => f.IndexFaker)
                             .RuleFor(p => p.FirstName, f => f.Person.FirstName)
                             .RuleFor(p => p.LastName, f => f.Person.LastName)
                             .RuleFor(p => p.Country, f => f.Address.Country())
                             .RuleFor(p => p.CompanyName, f => f.Company.CompanyName())
                             .RuleFor(p => p.IsRemoved, f => f.PickRandomParam(new bool[] { true, true, false }))
+                            .Ignore(p => p.Calls)
                             .FinishWith((f, contact) => Debug.WriteLine($"Contact was created. Id = {contact.Id} {contact.FullName}"));
 
         public static Faker<Call> Calls(List<Device> devices, List<Contact> contacts)
         {
             return new Faker<Call>()
+                            .StrictMode(true)
+                            .RuleFor(p => p.Id, f => f.IndexFaker)
                             .RuleFor(p => p.BeginCallDate, f => f.Date.Past())
                             .RuleFor(p => p.EndCallDate, (f, p) => p.BeginCallDate.AddMinutes(f.Random.Double(1, 3)))
                             .RuleFor(p => p.Status, f => f.PickRandom<CallStatus>())
@@ -34,9 +39,12 @@ namespace Altkom.Motorola.EF.Generator
         }
 
         public static Faker<Device> Devices => new Faker<Device>()
+                           .StrictMode(true)
+                           .RuleFor(p => p.Id, f => f.IndexFaker)
                            .RuleFor(p => p.Name, f => $"Radio {f.UniqueIndex}")
                            .RuleFor(p => p.Firmware, f => f.System.Version().ToString())
                            .RuleFor(p => p.Description, f => f.Lorem.Paragraph(1))
+                           .Ignore(p => p.Calls)
                            .FinishWith((f, device) => Debug.WriteLine($"Device was created. Id = {device.Id} {device.Name}"));
     }
 }

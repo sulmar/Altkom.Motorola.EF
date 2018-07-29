@@ -40,18 +40,27 @@ namespace Altkom.Motorola.EF.ConsoleClient
 
         static void Generate()
         {
-            var calls = SampleData.Generate(100, 20, 1000);
-
-            Debug.WriteLine("Saving do database...");
-
+            
             using (var context = new RadioContext())
             {
+                if (!context.Database.Exists())
+                {
+                    Debug.WriteLine("Creating database...");
+                }
+                
                 DbCallsService callsService = new DbCallsService(context);
 
-                callsService.AddRange(calls);
+                if (!callsService.Any())
+                {
+                    var calls = SampleData.Generate(1000, 1000, 100000);
+
+                    Debug.WriteLine("Saving to database...");
+                    callsService.AddRange(calls);
+                    Debug.WriteLine("Success.");
+                }
             }
 
-            Debug.WriteLine("Success.");
+            
 
         }
     }
