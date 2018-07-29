@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{10DBDA34-07B4-430B-92B1-C5CBF1FC56C5}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Altkom.Motorola.EF.ConsoleClient</RootNamespace>
-    <AssemblyName>Altkom.Motorola.EF.ConsoleClient</AssemblyName>
+    <ProjectGuid>{6A1189DE-6F87-42B9-82EF-D1174BDA9D1E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Altkom.Motorola.EF.Generator</RootNamespace>
+    <AssemblyName>Altkom.Motorola.EF.Generator</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,14 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="Bogus, Version=22.3.2.0, Culture=neutral, PublicKeyToken=fa1bb3f3f218129a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bogus.22.3.2\lib\net40\Bogus.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,22 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Fake.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleData.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Altkom.Motorola.EF.DbServices\Altkom.Motorola.EF.DbServices.csproj">
-      <Project>{df3627ec-d716-45f4-86e3-b63b80379d77}</Project>
-      <Name>Altkom.Motorola.EF.DbServices</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Altkom.Motorola.EF.Generator\Altkom.Motorola.EF.Generator.csproj">
-      <Project>{6A1189DE-6F87-42B9-82EF-D1174BDA9D1E}</Project>
-      <Name>Altkom.Motorola.EF.Generator</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Altkom.Motorola.EF.Models\Altkom.Motorola.EF.Models.csproj">
       <Project>{5E14AC5D-8ADB-4EBD-A8B4-14F8BDDF82D0}</Project>
       <Name>Altkom.Motorola.EF.Models</Name>

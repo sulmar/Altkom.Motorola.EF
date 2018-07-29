@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{10DBDA34-07B4-430B-92B1-C5CBF1FC56C5}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Altkom.Motorola.EF.ConsoleClient</RootNamespace>
-    <AssemblyName>Altkom.Motorola.EF.ConsoleClient</AssemblyName>
+    <ProjectGuid>{DF3627EC-D716-45F4-86E3-B63B80379D77}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Altkom.Motorola.EF.DbServices</RootNamespace>
+    <AssemblyName>Altkom.Motorola.EF.DbServices</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -49,26 +47,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Configurations\CallConfiguration.cs" />
+    <Compile Include="Configurations\ContactConfiguration.cs" />
+    <Compile Include="Configurations\DeviceConfiguration.cs" />
+    <Compile Include="DbCallsService.cs" />
+    <Compile Include="RadioContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Altkom.Motorola.EF.DbServices\Altkom.Motorola.EF.DbServices.csproj">
-      <Project>{df3627ec-d716-45f4-86e3-b63b80379d77}</Project>
-      <Name>Altkom.Motorola.EF.DbServices</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Altkom.Motorola.EF.Generator\Altkom.Motorola.EF.Generator.csproj">
-      <Project>{6A1189DE-6F87-42B9-82EF-D1174BDA9D1E}</Project>
-      <Name>Altkom.Motorola.EF.Generator</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Altkom.Motorola.EF.Models\Altkom.Motorola.EF.Models.csproj">
       <Project>{5E14AC5D-8ADB-4EBD-A8B4-14F8BDDF82D0}</Project>
       <Name>Altkom.Motorola.EF.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
