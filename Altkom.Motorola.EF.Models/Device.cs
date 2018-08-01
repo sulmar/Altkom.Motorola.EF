@@ -8,7 +8,9 @@ namespace Altkom.Motorola.EF.Models
         public string Model { get; set; }
         public string Firmware { get; set; }
         public string Description { get; set; }
-        public ICollection<Call> Calls { get; set; }
+        // Navigation property
+        public virtual ICollection<Call> Calls { get; set; }
+
 
     }
 }

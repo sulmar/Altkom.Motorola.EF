@@ -6,9 +6,11 @@ namespace Altkom.Motorola.EF.Models
     {
         public DateTime BeginCallDate { get; set; }
         public DateTime? EndCallDate { get; set; }
-        public Device Source { get; set; }
-        public Contact Sender { get; set; }
-        public Device Target { get; set; }
+        
+        // Navigation property
+        public virtual Device Source { get; set; }
+        public virtual Contact Sender { get; set; }
+        public virtual Device Target { get; set; }
         public int ChannelId { get; set; }
         public bool IsAnswered { get; set; }
         public CallStatus Status { get; set; }

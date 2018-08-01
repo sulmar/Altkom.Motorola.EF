@@ -20,8 +20,19 @@ namespace Altkom.Motorola.EF.ConsoleClient
             Generate();
 
             // TODO: Create tests
+            DataLayer dataLayer = new DataLayer();
+            //dataLayer.Example1();
 
+            //dataLayer.Example1();
+            //dataLayer.Solution1A();
+            //dataLayer.Solution1B();
+            //dataLayer.Solution1C();
 
+            //dataLayer.Example2();
+            // dataLayer.Solution2();
+            // dataLayer.Solution2B();
+
+            dataLayer.Example4();
 
             Debug.WriteLine($"Finished.");
 
@@ -53,7 +64,7 @@ namespace Altkom.Motorola.EF.ConsoleClient
 
                 if (!callsService.Any())
                 {
-                    var calls = SampleData.Generate(1000, 1000, 1000000);
+                    var calls = SampleData.Generate(1000, 1000, 1000, 700000);
 
                     Debug.WriteLine("Saving to database...");
                     // callsService.AddRange(calls);

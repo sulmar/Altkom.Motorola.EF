@@ -50,6 +50,8 @@
     <Compile Include="Configurations\CallConfiguration.cs" />
     <Compile Include="Configurations\ContactConfiguration.cs" />
     <Compile Include="Configurations\DeviceConfiguration.cs" />
+    <Compile Include="Configurations\GroupConfiguration.cs" />
+    <Compile Include="Configurations\UserConfiguration.cs" />
     <Compile Include="DbCallsService.cs" />
     <Compile Include="Extensions\DbContextExtensions.cs" />
     <Compile Include="RadioContext.cs" />

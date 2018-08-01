@@ -7,13 +7,6 @@ namespace Altkom.Motorola.EF.DbServices.Configurations
     {
         public ContactConfiguration()
         {
-            Property(p => p.FirstName)
-                .HasMaxLength(50);
-
-            Property(p => p.LastName)
-                .IsRequired()
-                .HasMaxLength(50);
-
             Property(p => p.Country)
                 .HasMaxLength(100);
 

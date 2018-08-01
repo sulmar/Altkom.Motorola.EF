@@ -19,6 +19,9 @@ namespace Altkom.Motorola.EF.DbServices
             : base("RadioConnection")
         {
 
+            // Disable Lazy Loading
+            this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.ProxyCreationEnabled = false;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -26,7 +29,8 @@ namespace Altkom.Motorola.EF.DbServices
             modelBuilder.Configurations.Add(new ContactConfiguration());
             modelBuilder.Configurations.Add(new DeviceConfiguration());
             modelBuilder.Configurations.Add(new CallConfiguration());
-
+            modelBuilder.Configurations.Add(new UserConfiguration());
+            modelBuilder.Configurations.Add(new GroupConfiguration());
             base.OnModelCreating(modelBuilder);
         }
     }

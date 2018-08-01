@@ -9,9 +9,15 @@ namespace Altkom.Motorola.EF.Generator
 {
     public class SampleData
     {
-        public static ICollection<Call> Generate(int contactCount, int deviceCount, int callCount)
+        public static ICollection<Call> Generate(int userCount, int groupCount, int deviceCount, int callCount)
         {
-            var contacts = Fake.Contacts.Generate(contactCount);
+            var users = Fake.Users.Generate(userCount);
+            var groups = Fake.Groups.Generate(groupCount);
+
+            var contacts = users
+                .Concat<Contact>(groups)
+                .ToList();
+
             var devices = Fake.Devices.Generate(deviceCount);
 
             var calls = Fake.Calls(devices, contacts).Generate(callCount);

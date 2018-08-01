@@ -33,7 +33,7 @@ namespace Altkom.Motorola.EF.DbServices
             }
         }
 
-        public void AddBatch<T>(IEnumerable<T> entities, int batchSize = 10)
+        public void AddBatch<T>(IEnumerable<T> entities, int batchSize = 50000)
               where T : class
         {
             

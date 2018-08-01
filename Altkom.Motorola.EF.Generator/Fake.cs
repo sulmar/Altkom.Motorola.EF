@@ -11,7 +11,7 @@ namespace Altkom.Motorola.EF.Generator
 
     public class Fake
     {
-        public static Faker<Contact> Contacts => new Faker<Contact>()
+        public static Faker<User> Users => new Faker<User>()
                             .StrictMode(true)
                             .RuleFor(p => p.Id, f => f.IndexFaker)
                             .RuleFor(p => p.FirstName, f => f.Person.FirstName)
@@ -20,7 +20,18 @@ namespace Altkom.Motorola.EF.Generator
                             .RuleFor(p => p.CompanyName, f => f.Company.CompanyName())
                             .RuleFor(p => p.IsRemoved, f => f.PickRandomParam(new bool[] { true, true, false }))
                             .Ignore(p => p.Calls)
-                            .FinishWith((f, contact) => Debug.WriteLine($"Contact was created. Id = {contact.Id} {contact.FullName}"));
+                            .FinishWith((f, user) => Debug.WriteLine($"User was created. Id = {user.Id} {user.FullName}"));
+
+        public static Faker<Group> Groups => new Faker<Group>()
+                            .StrictMode(true)
+                            .RuleFor(p => p.Id, f => f.IndexFaker)
+                            .RuleFor(p => p.Name, f => f.Company.CompanyName())
+                            .RuleFor(p => p.Country, f => f.Address.Country())
+                            .RuleFor(p => p.CompanyName, f => f.Company.CompanyName())
+                            .RuleFor(p => p.IsRemoved, f => f.Random.Bool(0.9f))
+                            .Ignore(p => p.Calls)
+                            .FinishWith((f, group) => Debug.WriteLine($"Group was created. Id= {group.Id} {group.FullName}"));
+
 
         public static Faker<Call> Calls(List<Device> devices, List<Contact> contacts)
         {
