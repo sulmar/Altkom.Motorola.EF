@@ -7,8 +7,10 @@ namespace Altkom.Motorola.EF.DbServices.Configurations
     {
         public CallConfiguration()
         {
-            HasOptional(p => p.Source)
-                .WithMany(d => d.Calls);
+            
+            HasOptional(p => p.Sender)
+                .WithMany(d => d.Calls)
+                .WillCascadeOnDelete(true);       
 
             HasIndex(p => p.ChannelId)
                 .HasName("IX_ChannelId");

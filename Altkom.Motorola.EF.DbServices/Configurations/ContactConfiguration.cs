@@ -13,6 +13,8 @@ namespace Altkom.Motorola.EF.DbServices.Configurations
             Property(p => p.CompanyName)
                 .HasMaxLength(100);
 
+            
+
         }
     }
 }

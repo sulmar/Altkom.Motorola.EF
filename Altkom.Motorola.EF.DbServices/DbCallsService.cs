@@ -61,11 +61,16 @@ namespace Altkom.Motorola.EF.DbServices
 
                     throw;
                 }
+
+                finally
+                {
+                    context.Configuration.AutoDetectChangesEnabled = true;
+                }
             }
             
 
         }
-
+        
             public bool Any() => context.Calls.Any();
     }
 }

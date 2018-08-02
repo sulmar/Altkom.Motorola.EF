@@ -1,4 +1,5 @@
 ﻿using Altkom.Motorola.EF.DbServices.Configurations;
+using Altkom.Motorola.EF.DbServices.Migrations;
 using Altkom.Motorola.EF.Models;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,14 @@ namespace Altkom.Motorola.EF.DbServices
             // Disable Lazy Loading
             this.Configuration.LazyLoadingEnabled = false;
             this.Configuration.ProxyCreationEnabled = false;
+
+
+            if (this.Database.CompatibleWithModel(false))
+            {
+                Console.WriteLine("Database was changed");
+            }
+
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<RadioContext, Configuration>());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

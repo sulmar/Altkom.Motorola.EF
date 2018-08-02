@@ -17,6 +17,7 @@ namespace Altkom.Motorola.EF.ConsoleClient
 
             var myDevice = new Device { Id = 99999, Name = "My Radio" };
 
+           
             using (var context = new RadioContext())
             {
                //  context.Configuration.AutoDetectChangesEnabled = false;
@@ -32,9 +33,6 @@ namespace Altkom.Motorola.EF.ConsoleClient
 
                 WriteOutput($"{context.Entry(myDevice).State}");
                 WriteOutput($"{context.Entry(device).State}");
-
-                context.SaveChanges();
-                
 
                 device.Firmware = "10.0.0.0";
 

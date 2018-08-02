@@ -54,6 +54,23 @@
     <Compile Include="Configurations\UserConfiguration.cs" />
     <Compile Include="DbCallsService.cs" />
     <Compile Include="Extensions\DbContextExtensions.cs" />
+    <Compile Include="Migrations\201808011132375_InitialCreate.cs" />
+    <Compile Include="Migrations\201808011132375_InitialCreate.Designer.cs">
+      <DependentUpon>201808011132375_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808021126389_AddColorToDevice.cs" />
+    <Compile Include="Migrations\201808021126389_AddColorToDevice.Designer.cs">
+      <DependentUpon>201808021126389_AddColorToDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808021255098_AddWeigthToDevice.cs" />
+    <Compile Include="Migrations\201808021255098_AddWeigthToDevice.Designer.cs">
+      <DependentUpon>201808021255098_AddWeigthToDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808021338179_AddCascadeOnDeleteToCall.cs" />
+    <Compile Include="Migrations\201808021338179_AddCascadeOnDeleteToCall.Designer.cs">
+      <DependentUpon>201808021338179_AddCascadeOnDeleteToCall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="RadioContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -66,6 +83,20 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201808011132375_InitialCreate.resx">
+      <DependentUpon>201808011132375_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808021126389_AddColorToDevice.resx">
+      <DependentUpon>201808021126389_AddColorToDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808021255098_AddWeigthToDevice.resx">
+      <DependentUpon>201808021255098_AddWeigthToDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808021338179_AddCascadeOnDeleteToCall.resx">
+      <DependentUpon>201808021338179_AddCascadeOnDeleteToCall.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -32,7 +32,24 @@ namespace Altkom.Motorola.EF.ConsoleClient
             // dataLayer.Solution2();
             // dataLayer.Solution2B();
 
-            dataLayer.Example4();
+            // dataLayer.Example4();
+
+            // dataLayer.Example5();
+
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    dataLayer.Example6();
+            //    dataLayer.Solution6A();
+            //}
+
+            // dataLayer.Solution6B();
+
+            //dataLayer.Example6C();
+            //dataLayer.Solution6C();
+
+            // dataLayer.Solution9A();
+            //dataLayer.Solution9B();
+            dataLayer.Solution9C();
 
             Debug.WriteLine($"Finished.");
 
