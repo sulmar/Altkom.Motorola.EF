@@ -14,5 +14,7 @@ namespace Altkom.Motorola.EF.Models
         public int ChannelId { get; set; }
         public bool IsAnswered { get; set; }
         public CallStatus Status { get; set; }
+
+      
     }
 }

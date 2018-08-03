@@ -7,13 +7,13 @@ namespace Altkom.Motorola.EF.DbServices.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddCascadeOnDeleteToCall : IMigrationMetadata
+    public sealed partial class Test : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddCascadeOnDeleteToCall));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Test));
         
         string IMigrationMetadata.Id
         {
-            get { return "201808021338179_AddCascadeOnDeleteToCall"; }
+            get { return "201808030826124_Test"; }
         }
         
         string IMigrationMetadata.Source

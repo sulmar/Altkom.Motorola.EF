@@ -66,9 +66,9 @@
     <Compile Include="Migrations\201808021255098_AddWeigthToDevice.Designer.cs">
       <DependentUpon>201808021255098_AddWeigthToDevice.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808021338179_AddCascadeOnDeleteToCall.cs" />
-    <Compile Include="Migrations\201808021338179_AddCascadeOnDeleteToCall.Designer.cs">
-      <DependentUpon>201808021338179_AddCascadeOnDeleteToCall.cs</DependentUpon>
+    <Compile Include="Migrations\201808030826124_Test.cs" />
+    <Compile Include="Migrations\201808030826124_Test.Designer.cs">
+      <DependentUpon>201808030826124_Test.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="RadioContext.cs" />
@@ -94,8 +94,8 @@
     <EmbeddedResource Include="Migrations\201808021255098_AddWeigthToDevice.resx">
       <DependentUpon>201808021255098_AddWeigthToDevice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808021338179_AddCascadeOnDeleteToCall.resx">
-      <DependentUpon>201808021338179_AddCascadeOnDeleteToCall.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808030826124_Test.resx">
+      <DependentUpon>201808030826124_Test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

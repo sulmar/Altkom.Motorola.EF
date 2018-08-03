@@ -3,7 +3,7 @@ namespace Altkom.Motorola.EF.DbServices.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddCascadeOnDeleteToCall : DbMigration
+    public partial class Test : DbMigration
     {
         public override void Up()
         {
