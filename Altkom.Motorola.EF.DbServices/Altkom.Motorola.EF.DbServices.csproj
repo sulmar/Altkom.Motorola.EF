@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\CallConfiguration.cs" />
+    <Compile Include="Configurations\CallSummaryConfiguration.cs" />
     <Compile Include="Configurations\ContactConfiguration.cs" />
     <Compile Include="Configurations\DeviceConfiguration.cs" />
     <Compile Include="Configurations\GroupConfiguration.cs" />
@@ -69,6 +70,10 @@
     <Compile Include="Migrations\201808030826124_Test.cs" />
     <Compile Include="Migrations\201808030826124_Test.Designer.cs">
       <DependentUpon>201808030826124_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808031111208_AddRowVersionToDevice.cs" />
+    <Compile Include="Migrations\201808031111208_AddRowVersionToDevice.Designer.cs">
+      <DependentUpon>201808031111208_AddRowVersionToDevice.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="RadioContext.cs" />
@@ -96,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808030826124_Test.resx">
       <DependentUpon>201808030826124_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808031111208_AddRowVersionToDevice.resx">
+      <DependentUpon>201808031111208_AddRowVersionToDevice.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

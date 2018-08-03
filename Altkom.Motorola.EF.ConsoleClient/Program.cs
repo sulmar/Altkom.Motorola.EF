@@ -21,7 +21,7 @@ namespace Altkom.Motorola.EF.ConsoleClient
 
             // TODO: Create tests
             DataLayer dataLayer = new DataLayer();
-            //dataLayer.Example1();
+            dataLayer.Example1();
 
             //dataLayer.Example1();
             //dataLayer.Solution1A();
@@ -49,7 +49,19 @@ namespace Altkom.Motorola.EF.ConsoleClient
 
             // dataLayer.Solution9A();
             //dataLayer.Solution9B();
-            dataLayer.Solution9C();
+            //dataLayer.Solution9C();
+
+            // dataLayer.Example10();
+            //            dataLayer.Solution10B();
+
+            //            dataLayer.Solution10C();
+
+            //dataLayer.Solution11A();
+
+            //dataLayer.Example12();
+            //dataLayer.Solution12();
+
+            dataLayer.Example13();
 
             Debug.WriteLine($"Finished.");
 

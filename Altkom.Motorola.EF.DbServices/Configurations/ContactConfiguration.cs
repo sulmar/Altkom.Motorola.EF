@@ -11,10 +11,11 @@ namespace Altkom.Motorola.EF.DbServices.Configurations
                 .HasMaxLength(100);
 
             Property(p => p.CompanyName)
-                .HasMaxLength(100);
+                .HasMaxLength(100)
+                .IsConcurrencyToken();
 
-            
-
+            Property(p => p.IsRemoved)
+                .IsConcurrencyToken();
         }
     }
 }

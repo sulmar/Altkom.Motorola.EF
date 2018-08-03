@@ -31,6 +31,11 @@ namespace Altkom.Motorola.EF.DbServices.Configurations
             //    .WithOptional(p => p.Target)
             //    .WillCascadeOnDelete(true);
 
+            Property(p => p.RowVersion)
+                .IsRowVersion()
+                .IsConcurrencyToken();
+           
+
         }
     }
 }

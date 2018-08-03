@@ -13,6 +13,7 @@ namespace Altkom.Motorola.EF.Models
         // Navigation property
         public virtual ICollection<Call> Calls { get; set; }
 
-
+        //[Timestamp]
+        public byte[] RowVersion { get; private set; }
     }
 }

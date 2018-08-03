@@ -43,6 +43,7 @@
     <Compile Include="Base.cs" />
     <Compile Include="Call.cs" />
     <Compile Include="CallStatus.cs" />
+    <Compile Include="CallSummary.cs" />
     <Compile Include="Contact.cs" />
     <Compile Include="Device.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

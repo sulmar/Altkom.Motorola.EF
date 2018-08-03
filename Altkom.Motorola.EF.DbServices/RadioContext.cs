@@ -3,6 +3,7 @@ using Altkom.Motorola.EF.DbServices.Migrations;
 using Altkom.Motorola.EF.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,13 @@ namespace Altkom.Motorola.EF.DbServices
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Device> Devices { get; set; }
         public DbSet<Call> Calls { get; set; }
+        public DbSet<CallSummary> CallSummaries { get; set; }
+
+        public RadioContext(DbConnection connection)
+            : base(connection, false)
+        {
+
+        }
 
         public RadioContext()
             : base("RadioConnection")
@@ -40,6 +48,8 @@ namespace Altkom.Motorola.EF.DbServices
             modelBuilder.Configurations.Add(new CallConfiguration());
             modelBuilder.Configurations.Add(new UserConfiguration());
             modelBuilder.Configurations.Add(new GroupConfiguration());
+            modelBuilder.Configurations.Add(new CallSummaryConfiguration());
+
             base.OnModelCreating(modelBuilder);
         }
     }

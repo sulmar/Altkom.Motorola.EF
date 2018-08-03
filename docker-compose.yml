@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  altkom.motorola.ef.consoleclient:
+    image: ${DOCKER_REGISTRY}altkommotorolaefconsoleclient
+    build:
+      context: .\Altkom.Motorola.EF.ConsoleClient
+      dockerfile: Dockerfile
