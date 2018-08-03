@@ -17,8 +17,6 @@ namespace Altkom.Motorola.EF.ConsoleClient
         public void Example14()
         {
             var model = new Model { Page = 2, ResultsPerPage = 10 };
-
-            
             
             using (var context = new RadioContext())
             {

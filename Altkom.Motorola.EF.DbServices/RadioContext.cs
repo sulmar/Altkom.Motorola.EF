@@ -38,6 +38,8 @@ namespace Altkom.Motorola.EF.DbServices
                 Console.WriteLine("Database was changed");
             }
 
+           
+
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<RadioContext, Configuration>());
         }
 
