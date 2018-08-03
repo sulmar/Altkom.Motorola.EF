@@ -79,6 +79,10 @@
     <Compile Include="Migrations\201808031331195_AddCountryIndexToContact.Designer.cs">
       <DependentUpon>201808031331195_AddCountryIndexToContact.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808031431160_AddIndexesToCall.cs" />
+    <Compile Include="Migrations\201808031431160_AddIndexesToCall.Designer.cs">
+      <DependentUpon>201808031431160_AddIndexesToCall.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="RadioContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808031331195_AddCountryIndexToContact.resx">
       <DependentUpon>201808031331195_AddCountryIndexToContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808031431160_AddIndexesToCall.resx">
+      <DependentUpon>201808031431160_AddIndexesToCall.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

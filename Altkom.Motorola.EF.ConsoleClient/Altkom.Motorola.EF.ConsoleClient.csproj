@@ -69,6 +69,7 @@
     <Compile Include="Problem10Transactions.cs" />
     <Compile Include="Problem12Search.cs" />
     <Compile Include="Problem13.cs" />
+    <Compile Include="Problem14CacheBlot.cs" />
     <Compile Include="Problem1RowGreediness.cs" />
     <Compile Include="Problem2NPlusOne.cs" />
     <Compile Include="Problem3ColumnGreediness.cs" />

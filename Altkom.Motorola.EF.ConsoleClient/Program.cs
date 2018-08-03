@@ -61,7 +61,10 @@ namespace Altkom.Motorola.EF.ConsoleClient
             //dataLayer.Example12();
             //dataLayer.Solution12();
 
-            dataLayer.Example13();
+            // dataLayer.Example13();
+
+            dataLayer.Example14();
+            dataLayer.Solution14();
 
             Debug.WriteLine($"Finished.");
 
