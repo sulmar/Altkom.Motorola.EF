@@ -7,13 +7,20 @@ namespace Altkom.Motorola.EF.DbServices.Configurations
     {
         public CallConfiguration()
         {
-
             HasOptional(p => p.Sender)
                 .WithMany(d => d.Calls)
                 .WillCascadeOnDelete(true);
 
             HasIndex(p => p.ChannelId)
                 .HasName("IX_ChannelId");
+
+            HasIndex(p => new { p.BeginCallDate, p.EndCallDate });
+
+            /* 
+             * CREATE NONCLUSTERED INDEX MyIndex
+	on dbo.Calls(ChannelId)
+		INCLUDE	(BeginCallDate, EndCallDate)
+        */
         }
     }
 }

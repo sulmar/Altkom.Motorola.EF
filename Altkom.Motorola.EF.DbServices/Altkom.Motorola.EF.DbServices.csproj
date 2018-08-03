@@ -75,6 +75,10 @@
     <Compile Include="Migrations\201808031111208_AddRowVersionToDevice.Designer.cs">
       <DependentUpon>201808031111208_AddRowVersionToDevice.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808031331195_AddCountryIndexToContact.cs" />
+    <Compile Include="Migrations\201808031331195_AddCountryIndexToContact.Designer.cs">
+      <DependentUpon>201808031331195_AddCountryIndexToContact.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="RadioContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808031111208_AddRowVersionToDevice.resx">
       <DependentUpon>201808031111208_AddRowVersionToDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808031331195_AddCountryIndexToContact.resx">
+      <DependentUpon>201808031331195_AddCountryIndexToContact.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

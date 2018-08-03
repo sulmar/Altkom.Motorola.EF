@@ -16,7 +16,7 @@ namespace Altkom.Motorola.EF.DbServices
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Device> Devices { get; set; }
         public DbSet<Call> Calls { get; set; }
-        public DbSet<CallSummary> CallSummaries { get; set; }
+        // public virtual DbSet<CallSummary> vwCallSummary { get; set; }
 
         public RadioContext(DbConnection connection)
             : base(connection, false)
@@ -48,7 +48,7 @@ namespace Altkom.Motorola.EF.DbServices
             modelBuilder.Configurations.Add(new CallConfiguration());
             modelBuilder.Configurations.Add(new UserConfiguration());
             modelBuilder.Configurations.Add(new GroupConfiguration());
-            modelBuilder.Configurations.Add(new CallSummaryConfiguration());
+            // modelBuilder.Configurations.Add(new CallSummaryConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

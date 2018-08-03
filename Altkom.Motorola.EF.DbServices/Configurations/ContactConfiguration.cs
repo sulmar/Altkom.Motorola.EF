@@ -16,6 +16,11 @@ namespace Altkom.Motorola.EF.DbServices.Configurations
 
             Property(p => p.IsRemoved)
                 .IsConcurrencyToken();
+
+            HasIndex(p => p.Country)
+                .HasName("IX_Country");
+
+
         }
     }
 }
