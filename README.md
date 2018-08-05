@@ -33,11 +33,10 @@ https://www.red-gate.com/simple-talk/dotnet/net-tools/entity-framework-performan
 
 ## Aplikacja
 1. ANTS Performance Profiler
-2. Linqpad
 
 ## Biblioteki
 1. Bogus
 2. MethodTimer.Fody
-
+3. AutoMapper
 
 
