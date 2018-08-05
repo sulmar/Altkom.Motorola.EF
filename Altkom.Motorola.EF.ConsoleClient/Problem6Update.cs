@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using Altkom.Motorola.EF.DbServices.Extensions;
 
 namespace Altkom.Motorola.EF.ConsoleClient
 {
@@ -117,6 +118,7 @@ namespace Altkom.Motorola.EF.ConsoleClient
             }
         }
 
+        // Usuwanie encji za pomocą bezpośredniej zmiany stanu
         public void Solution6C()
         {
             int userId = 1000;
@@ -126,8 +128,33 @@ namespace Altkom.Motorola.EF.ConsoleClient
             using (var context = new RadioContext())
             {
                 context.Contacts.Attach(user);
-                context.Entry(user).State = System.Data.Entity.EntityState.Deleted;
+                context.Entry(user).State = EntityState.Deleted;
                 context.SaveChanges();                
+            }
+        }
+
+        // Usuwanie encji z użyciem metody rozszerzacącej na DbContext
+        public void Solution6D()
+        {
+            int userId = 1000;
+
+            using (var context = new RadioContext())
+            {
+                context.Remove<User>(userId);                
+                context.SaveChanges();
+            }
+        }
+
+        // Usuwanie encji z użyciem metody rozszerzacącej na DbSet
+        public void Solution6E()
+        {
+            int deviceId = 1000;
+
+            using (var context = new RadioContext())
+            {
+                context.Devices.Remove(deviceId);
+
+                context.SaveChanges();
             }
         }
 
@@ -152,43 +179,23 @@ namespace Altkom.Motorola.EF.ConsoleClient
 
             using (var context = new RadioContext())
             {
-                //if (context.Contacts.Any(u=>u.Id == user.Id))
-                //{
-                    WriteOutput(context.Entry(user).State.ToString());
+                WriteOutput(context.Entry(user).State.ToString());
 
-                    context.Contacts.Attach(user);
+                context.Contacts.Attach(user);
 
-                    WriteOutput(context.Entry(user).State.ToString());
+                WriteOutput(context.Entry(user).State.ToString());
 
-                    context.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                context.Entry(user).State = System.Data.Entity.EntityState.Modified;
 
-                    WriteOutput(context.Entry(user).State.ToString());
+                WriteOutput(context.Entry(user).State.ToString());
 
-                    var entities = context.ChangeTracker.Entries()
-                        .Select(x => new { x.Entity, x.State });
+                var entities = context.ChangeTracker.Entries()
+                    .Select(x => new { x.Entity, x.State });
 
-                    context.SaveChanges();
+                context.SaveChanges();
 
-                    WriteOutput(context.Entry(user).State.ToString());
-                //}
-                //else
-                //{
-                //    return;
-                //}
-
-               
+                WriteOutput(context.Entry(user).State.ToString());
             }
-
-
-
-
         }
     }
-
-    //public static class DbSetExtensions    
-    //{
-
-    //    public 
-
-    //}
 }
