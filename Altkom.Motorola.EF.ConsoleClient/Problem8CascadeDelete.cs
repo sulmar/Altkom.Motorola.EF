@@ -26,7 +26,7 @@ namespace Altkom.Motorola.EF.ConsoleClient
 
         public void Solution8()
         {
-
+            // 
         }
     }
 }

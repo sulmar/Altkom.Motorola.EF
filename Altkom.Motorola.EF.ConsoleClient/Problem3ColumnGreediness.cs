@@ -11,6 +11,7 @@ namespace Altkom.Motorola.EF.ConsoleClient
 {
     public partial class DataLayer
     {
+        // Problem: Pobieranie zbyt dużej ilości kolumn
         [Time]
         public void Example3()
         {
@@ -30,6 +31,7 @@ namespace Altkom.Motorola.EF.ConsoleClient
         }
 
 
+        // Pobieramy tylko potrzebne kolumny i tworzymy typ anonimowy
         [Time]
         public void Solution3()
         {
@@ -49,6 +51,7 @@ namespace Altkom.Motorola.EF.ConsoleClient
             }
         }
 
+        // Pobieramy tylko potrzebne kolumny i tworzymy klasę DTO (Data Transfer Object)
         [Time]
         public void Solution3B()
         {

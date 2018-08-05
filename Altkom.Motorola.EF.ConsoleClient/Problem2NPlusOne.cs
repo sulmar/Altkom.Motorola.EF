@@ -13,6 +13,7 @@ namespace Altkom.Motorola.EF.ConsoleClient
     public partial class DataLayer
     {
 
+        // Problem: Generowanie zbyt dużej ilości zapytań do bazy danych (N+1)
         // Lazy Loading        
         [Time]
         public void Example2()

@@ -12,12 +12,11 @@ namespace Altkom.Motorola.EF.DbServices.Interceptors
     {
         public void NonQueryExecuted(DbCommand command, DbCommandInterceptionContext<int> interceptionContext)
         {
-            throw new NotImplementedException();
         }
 
         public void NonQueryExecuting(DbCommand command, DbCommandInterceptionContext<int> interceptionContext)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void ReaderExecuted(DbCommand command, DbCommandInterceptionContext<DbDataReader> interceptionContext)
@@ -26,10 +25,10 @@ namespace Altkom.Motorola.EF.DbServices.Interceptors
 
         public void ReaderExecuting(DbCommand command, DbCommandInterceptionContext<DbDataReader> interceptionContext)
         {
-            if (command.CommandText.Contains("FROM [dbo].[Devices]"))
-            {
-                command.CommandText = command.CommandText + " WHERE Color='Black'";
-            }
+            //if (command.CommandText.Contains("FROM [dbo].[Devices]"))
+            //{
+            //    command.CommandText = command.CommandText + " WHERE Color='Black'";
+            //}
 
         }
 

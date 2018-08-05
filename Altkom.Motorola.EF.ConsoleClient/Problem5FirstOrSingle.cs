@@ -1,15 +1,13 @@
 ﻿using Altkom.Motorola.EF.DbServices;
 using Altkom.Motorola.EF.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Altkom.Motorola.EF.ConsoleClient
 {
     public partial class DataLayer
     {
+        // Porównanie metod Find, First, Single
         public void Example5()
         {
             int deviceId = 1001;
@@ -48,11 +46,7 @@ namespace Altkom.Motorola.EF.ConsoleClient
                    .Where(u => u.Id == deviceId)
                    .SingleOrDefault();
 
-
-
             }
-            
-
         }
     }
 }

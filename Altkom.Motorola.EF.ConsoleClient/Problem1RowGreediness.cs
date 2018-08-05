@@ -15,6 +15,7 @@ namespace Altkom.Motorola.EF.ConsoleClient
     // PM> Install-Package MethodTimer.Fody
     public partial class DataLayer
     {
+        // Problem: Pobieranie zbyt dużej ilości rekordów
         [Time]
         public void Example1()
         {

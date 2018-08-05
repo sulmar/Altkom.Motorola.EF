@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,10 +20,13 @@ namespace Altkom.Motorola.EF.DbServices
         public DbSet<Call> Calls { get; set; }
         // public virtual DbSet<CallSummary> vwCallSummary { get; set; }
 
+        ObjectContext ObjectContext => ((IObjectContextAdapter)this).ObjectContext;
+
         public RadioContext(DbConnection connection)
             : base(connection, false)
         {
-
+        
+            
         }
 
         public RadioContext()
@@ -38,9 +43,18 @@ namespace Altkom.Motorola.EF.DbServices
                 Console.WriteLine("Database was changed");
             }
 
-           
+            ObjectContext.ObjectMaterialized += ObjectContext_ObjectMaterialized;
+
+
+
+
 
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<RadioContext, Configuration>());
+        }
+
+        private void ObjectContext_ObjectMaterialized(object sender, ObjectMaterializedEventArgs e)
+        {
+            
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
