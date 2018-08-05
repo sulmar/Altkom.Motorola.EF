@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity.Infrastructure;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -23,5 +25,12 @@ namespace Altkom.Motorola.EF.DbServices.Extensions
             }
             return context;
         }
+
+        /// <summary>
+        /// Metoda pobiera ObjectContext z DbContext
+        /// </summary>
+        /// <param name="context">DbContext</param>
+        /// <returns>ObjectContext</returns>
+        public static ObjectContext GetObjectContext(this IObjectContextAdapter context) => context.ObjectContext;
     }
 }
