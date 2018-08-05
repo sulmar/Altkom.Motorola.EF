@@ -12,8 +12,9 @@ namespace Altkom.Motorola.EF.ConsoleClient
 {
     public partial class DataLayer
     {
+
+        // Lazy Loading        
         [Time]
-        // Lazy Loading
         public void Example2()
         {
             string model = "SL2600";
@@ -30,6 +31,7 @@ namespace Altkom.Motorola.EF.ConsoleClient
 
                 foreach (var device in myDevices)
                 {
+                    // Następuje niepożądane zjawisko - dla każdej encji wykonywane jest zapytanie do bazy danych
                     int qty = device.Calls.Count;
 
                     // WriteOutput($"{device.Name} - {device.Calls.Count}");
@@ -50,19 +52,22 @@ namespace Altkom.Motorola.EF.ConsoleClient
             // NOTE: add using System.Data.Entity
             using (var context = new RadioContext())
             {
+                // Pobieramy wszystkie encje wraz encjami zależnymi
+                // left outer join
                 IQueryable<Device> devices = context.Devices
                     .Include(d => d.Calls)
                     .Where(d => d.Model == model);
 
                 List<Device> myDevices = devices.ToList();
 
-                //foreach (var device in myDevices)
-                //{
-                //    WriteOutput($"{device.Name} - {device.Calls.Count}");
-                //}
+                foreach (var device in myDevices)
+                {
+                    WriteOutput($"{device.Name} - {device.Calls.Count}");
+                }
             }
         }
 
+        // Filtrowanie po Navigation Property bez pobierania encji
         [Time]
         public void Solution2B()
         {
