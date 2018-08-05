@@ -1,4 +1,4 @@
-# Szkolenie Entity Framework dla zaawansowanych
+# Szkolenie Entity Framework 6 dla zaawansowanych
 
 ## Opis
 Szkolenie poświęcone problemom wydajnościowym, które są często spotykane gdy używamy Entity Framework.
