@@ -47,7 +47,7 @@ namespace Altkom.Motorola.EF.ConsoleClient
             //dataLayer.Example6C();
             //dataLayer.Solution6C();
 
-            dataLayer.Solution6D();
+            dataLayer.Solution6E();
 
             // dataLayer.Solution9A();
             //dataLayer.Solution9B();
